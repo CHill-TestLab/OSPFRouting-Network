@@ -22,6 +22,8 @@ I already had the IP addressing scheme laid out so that was the first step.
 
 ## Switches
 
+### Access Switches
+
 Configured VLAN 5-Hypervisors and VLAN 10-Servers with switchport trunking
 <br>`switchport trunk allowed vlan ".No"`</br>
 
@@ -38,6 +40,15 @@ switchport trunk allowed vlan "No."
 int "Port"
 switchport mode trunk
 switchport trunk allowed vlan "No."
+</pre>
+
+### Core Switches
+
+Configured all connected interfaces with 
+<pre>
+int range g1/0/1-9
+switchport mode trunk
+switchport trunk allowed 5,10,20,30,40,50,60,70
 </pre>
 
 ## Routers
