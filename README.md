@@ -59,3 +59,25 @@ int g0/0/0.x
 encapsulation x
 ip address 192.168.0.x 255.255.255.x
 </pre>
+
+### Troubleshooting #1 
+
+Issue: Links between Access Router and Core Switches not activating
+
+Process:
+Used `show ip int brief` to see configuration.
+Parent interface g0/0/0 was down.
+Sub-interfaces are administratively down.
+
+I set the interface g0/0/0 to `no shut`, but nothing happened.
+I `no shut` CoreSwitch #1's interface g0/0/7, and it activated, but only on the switch side.
+
+Solution:
+I unplugged all the cables, turns out g0/0/0 doesn't exist anymore.
+Reconfigured all the sub interfaces onto g0/0/1 which worked upon plugging in the cables again.
+
+### Troubleshooting #2
+
+Issue: No devices are able to ping each other
+
+
