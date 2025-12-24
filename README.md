@@ -39,3 +39,12 @@ int "Port"
 switchport mode trunk
 switchport trunk allowed vlan "No."
 </pre>
+
+## Routers
+
+Configured sub-interfaces on both ethernet ports to allow traffic from the VLANs.
+<pre>
+int g0/0/0.10
+encapsulation 10
+ip address 192.168.0.x 255.255.255.x
+</pre>
